@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-lg-6">
 					<div class="wel-nots">
-						<p></p>
+						<p>Welcome to Aashayein!</p>
 					</div>
 					<div class="right-top">
 						<ul>
@@ -90,65 +90,14 @@
 						<li><a class="nav-link" href="#appointment">Appointment</a></li>
                         <li><a class="nav-link" href="#gallery">Gallery</a></li>
 						<li><a class="nav-link" href="#team">Doctor</a></li>
-                        <li><a class="nav-link" onclick="openForm()">Login</a>
-						              <div class="log-popup" id="myForm">
-                          <form action="indexhome.html" class="form-container">
-                           <h1>Login</h1>
-                           <label for="email"><b>Email</b></label>
-                           <input type="text" placeholder="Enter Email" name="email" required>
-                           <label for="psw"><b>Password</b></label>
-                           <input type="password" placeholder="Enter Password" name="psw" required>
-                           <button type="submit" class="btn">Login</button>
-                           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-						               </form>
-                        </div>
-                        <script>
-                        function openForm() {
-		                  document.getElementById("myForm").style.display = "block";
-	                      	}
-
-	                   	function closeForm() {
-	                   	document.getElementById("myForm").style.display = "none";
-                            }
-                       </script>
-						
-						</li>
 						<li><a class="nav-link" href="#contact">Contact</a></li>
-						<li>
-                 <button class="nav-link" style="background-color:pink"; onclick="opensubs()">SUBSCRIBE</button>
-                 		<div class="form-popup" id="mysubs" >
-                 			<div class="subscribe-inner text-center clearfix">
-                        <form action="#" class="form-container" method = "post">
-		                  	<div class="row">
-				                <div class="col-lg-12">
-				              	<div class="subscribe-inner text-center clearfix">                        	
-                          <h1>Please subscribe to get latest update from Ashayein.</h1>
-                        </div>
-                      </div>
-                    </div>
-                           <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Email Address to subscribe" name="email" required>
-                            <button type="submit" class="btn">Subscribe</button>
-                            <button type="button" class="btn cancel" onclick="closesubs()">Close</button>
-                 		   </form>
-                 		 </div>
-                     </div>
-                 <script>
-                    function opensubs() {
-                 		document.getElementById("mysubs").style.display = "block";
-                 	   	}
-                 
-                 	 function closesubs() {
-                 	 document.getElementById("mysubs").style.display = "none";
-                          }
-                 </script>															
-						</li>
                     </ul>
                 </div>
             </div>
         </nav>
 	</header>
 	<!-- End header -->
+	
 	<!-- Start Banner -->
 	<div class="ulockd-home-slider">
 		<div class="container-fluid">
@@ -187,7 +136,89 @@
 		</div>
 	</div>
 	<!-- End Banner -->
-	
+
+<button class="open-chat" onclick="openchat()">CHAT</button>
+
+<div class="chat-popup" id="mychat">
+  <div class="form-container">
+    <h1>Chat</h1>
+
+    <div><label for="Message1"><b>Message</b></label></div>
+    <input type="text" id="message1" style="width: 281px;" keyup="chatReply('message1')" placeholder="Type messsage" name="fname" value=""></input>
+    <input type="text" id="message2" style="width: 281px;"  keyup="chatReply('message2')" placeholder="Reply" name="fname" value=""></input>
+    <input type="text" id="message3" style="width: 281px;" keyup="chatReply('message3')" placeholder="Type messsage"  name="fname" value=""></input>
+    <input type="text" id="message4" style="width: 281px;"  keyup="chatReply('message4')" placeholder="Reply" name="fname" value=""></input>
+   <input type="text" id="message5" style="width: 281px;"  keyup="chatReply('message5')" placeholder="Type messsage" name="fname" value=""></input>
+   <input type="text" id="message6" style="width: 281px;"  keyup="chatReply('message6')" placeholder="Reply" name="fname" value=""></input>
+   
+
+    <button type="button" onclick="chatReply('message1')" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closechat()">Close</button>
+  </div>
+</div>
+
+<script>
+function openchat() {
+              //alert("tejas");
+  document.getElementById("mychat").style.display = "block";
+}
+
+var input = document.getElementById("message1");
+var input3 = document.getElementById("message3");
+var input5 = document.getElementById("message5");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+              if(event.currentTarget.value){
+                             //event.currentTarget.id
+                             //document.getElementById("message3").value = "Options";
+                             chatReply(event.currentTarget.id)
+              }
+  }
+  });
+  input3.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+              if(event.currentTarget.value){
+                             //event.currentTarget.id
+                             //document.getElementById("message3").value = "Options";
+                             chatReply(event.currentTarget.id)
+              }
+  }
+  });
+  input5.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+              if(event.currentTarget.value){
+                             //event.currentTarget.id
+                             //document.getElementById("message3").value = "Options";
+                             chatReply(event.currentTarget.id)
+              }
+  }
+  });
+  /*input.addEventListener("keyup",enterReply(event));
+  input3.addEventListener("keyup",enterReply(event));
+  input5.addEventListener("keyup",enterReply(event));*/
+function chatReply(msg) {
+              //alert(msg);
+    if(msg.indexOf("1")>-1){
+              document.getElementById("message2").value = "Allow me to tell you a joke";
+    }
+              if(msg.indexOf("3")>-1){
+              document.getElementById("message4").value = "I used to have a fear of hurdles,but I got overit";
+    }
+              if(msg.indexOf("5")>-1){
+              document.getElementById("message6").value = "I am glad";
+    }
+  document.getElementById("mychat").style.display = "block";
+}
+
+function closechat() {
+  document.getElementById("mychat").style.display = "none";
+}
+</script>	
 	<!-- Start About us -->
 	<div id="about" class="about-box">
 		<div class="about-a1">
@@ -293,22 +324,12 @@ Aashayein app is buddy to every one around with its Features healing tool,Buddy 
 						</div>
 						<div class="item">
 							<div class="serviceBox">
-								<div class="service-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></div>
-								<h3 class="title">Counselling</h3>
-								<p class="description">
-									Counsellors listen to, empathise with, encourage and help to empower individuals. The nature of problems encountered varies according to the setting and could include, for example, depression, anxiety, the need to manage harmful emotions and behaviours.
-								</p>
-								<a href="https://www.skillsyouneed.com" class="new-btn-d br-2">Find more</a>
-							</div>
-						</div>
-						<div class="item">
-							<div class="serviceBox">
 								<div class="service-icon"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
 								<h3 class="title">Lost job business</h3>
 								<p class="description">
 									The majority of jobs lost in the crisis have been in industries that pay low average wages, with the lowest-paying industries accounting for 30 percent of all jobs
 								</p>
-								<a href="https://money.usnews.com" class="new-btn-d br-2">Find more</a>
+								<a href="#" class="new-btn-d br-2">Read More</a>
 							</div>
 						</div>
 						<div class="item">
@@ -614,7 +635,7 @@ Aashayein app is buddy to every one around with its Features healing tool,Buddy 
                 <div class="col-md-4 col-sm-6">
                     <div class="our-team">
                         <div class="pic">
-                            <img src="images/Doc3.jpg" alt="">
+                           <img src="images/Doc3.jpg" alt="">
                         </div>
                         <div class="team-content">
                             <h3 class="title">Poonam Yadav</h3>
@@ -635,89 +656,8 @@ Aashayein app is buddy to every one around with its Features healing tool,Buddy 
 	
 	<!-- End Team -->
 	
-<button class="open-chat" onclick="openchat()">CHAT</button>
-
-<div class="chat-popup" id="mychat">
-  <div class="form-container">
-    <h1>Chat</h1>
-
-    <div><label for="Message1"><b>Message</b></label></div>
-    <input type="text" id="message1" style="width: 281px;" keyup="chatReply('message1')" placeholder="Type messsage" name="fname" value=""></input>
-    <input type="text" id="message2" style="width: 281px;"  keyup="chatReply('message2')" placeholder="Reply" name="fname" value=""></input>
-    <input type="text" id="message3" style="width: 281px;" keyup="chatReply('message3')" placeholder="Type messsage"  name="fname" value=""></input>
-    <input type="text" id="message4" style="width: 281px;"  keyup="chatReply('message4')" placeholder="Reply" name="fname" value=""></input>
-   <input type="text" id="message5" style="width: 281px;"  keyup="chatReply('message5')" placeholder="Type messsage" name="fname" value=""></input>
-   <input type="text" id="message6" style="width: 281px;"  keyup="chatReply('message6')" placeholder="Reply" name="fname" value=""></input>
-   
-
-    <button type="button" onclick="chatReply('message1')" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closechat()">Close</button>
-  </div>
-</div>
-
-<script>
-function openchat() {
-              //alert("tejas");
-  document.getElementById("mychat").style.display = "block";
-}
-
-var input = document.getElementById("message1");
-var input3 = document.getElementById("message3");
-var input5 = document.getElementById("message5");
-
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-              if(event.currentTarget.value){
-                             //event.currentTarget.id
-                             //document.getElementById("message3").value = "Options";
-                             chatReply(event.currentTarget.id)
-              }
-  }
-  });
-  input3.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-              if(event.currentTarget.value){
-                             //event.currentTarget.id
-                             //document.getElementById("message3").value = "Options";
-                             chatReply(event.currentTarget.id)
-              }
-  }
-  });
-  input5.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-              if(event.currentTarget.value){
-                             //event.currentTarget.id
-                             //document.getElementById("message3").value = "Options";
-                             chatReply(event.currentTarget.id)
-              }
-  }
-  });
-  /*input.addEventListener("keyup",enterReply(event));
-  input3.addEventListener("keyup",enterReply(event));
-  input5.addEventListener("keyup",enterReply(event));*/
-function chatReply(msg) {
-              //alert(msg);
-    if(msg.indexOf("1")>-1){
-              document.getElementById("message2").value = "Allow me to tell you a joke";
-    }
-              if(msg.indexOf("3")>-1){
-              document.getElementById("message4").value = "I used to have a fear of hurdles,but I got overit";
-    }
-              if(msg.indexOf("5")>-1){
-              document.getElementById("message6").value = "I am glad";
-    }
-  document.getElementById("mychat").style.display = "block";
-}
-
-function closechat() {
-  document.getElementById("mychat").style.display = "none";
-}
-</script>
-
+	
+	
 	
 	<!-- Start Contact -->
 	<div id="contact" class="contact-box">
@@ -811,9 +751,6 @@ function closechat() {
 		</div>
 	</div>
 	<!-- End Contact -->
-	
-	
-	<!-- Start Footer -->
 	<footer class="footer-box">
 		<div class="container">
 			<div class="row">

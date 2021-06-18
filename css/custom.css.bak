@@ -54,7 +54,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* The popup form - hidden by default */
 .log-popup {
   display: none;
-  position: fixed;
+  position: center;
   bottom: 0;
   center: 20px;
   border: 3px solid #f1f1f1;
@@ -71,7 +71,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
- /* padding: 15px;
+  /*padding: 15px;
   margin: 5px 0 22px 0;*/
   border: none;
   background: #f1f1f1;
